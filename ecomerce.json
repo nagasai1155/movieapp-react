@@ -1,0 +1,33 @@
+{
+  "products": [
+    {
+      "name": "Balam Naga sai ",
+      "price": "123123",
+      "category": "mobiles",
+      "id": "42d5"
+    },
+    {
+      "id": "084d",
+      "name": "wrae",
+      "price": "234",
+      "category": "laptops"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "data": "4/5/2024",
+      "total": 20000
+    },
+    {
+      "id": "2",
+      "data": "4/5/2024",
+      "total": 30000
+    },
+    {
+      "id": "3",
+      "data": "4/5/2024",
+      "total": 20000
+    }
+  ]
+}

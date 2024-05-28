@@ -1,0 +1,45 @@
+*{
+    margin:0;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+   
+    gap:70px;
+    background:linear-gradient(45deg, rgb(172, 61, 61),rgb(81, 81, 188),rgb(27, 243, 27),rgb(220, 220, 47));
+    height: 50px;
+    align-items: center;
+}
+.nav li {
+    list-style-type: none;
+    color:white;
+    text-decoration: none;
+}
+.nav li a {
+    color:white;
+    text-decoration:none;
+    border-radius: 13px;
+    background-color: lightgray;
+    padding:5px 12px;
+}
+.nav li a:hover{
+    color:black;
+}
+.header h2 {
+    text-align: center;
+    align-items: center;
+    background:linear-gradient(23deg,red,yellow,green);
+    color:white;
+}
+.header h2:hover{
+    color:black;
+   
+}
+
+.maincard{
+    display: grid;
+    grid-template-columns: 1fr,1fr,1fr;
+    width:300px;
+    height: 350px;
+    border: 2px solid green;
+}

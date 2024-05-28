@@ -1,0 +1,40 @@
+.card img{
+    width:130px;
+    height:130px;
+   
+    
+    
+
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:2px solid lawngreen;
+    box-shadow: 20 20 20 red;
+    gap:20px;
+    margin-left:70px;
+    margin-top:70px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card{
+    border:2px solid yellow;
+    box-shadow: 20px 20px 20px lightcoral;
+    gap:70px;
+    width:350px;
+    height: 350px;
+    overflow-y: hidden;
+    
+}
+.nav{
+    margin-left :1000px;
+}
+.input{
+    width:230px;
+}
+*{
+    margin:2px;
+}

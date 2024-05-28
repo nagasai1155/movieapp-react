@@ -1,0 +1,51 @@
+1.difference between align-content and align-content;
+2.in css
+   absolute units and realtive units  (difference)
+
+
+   3.difference between navlink and link 
+4.difference between absolute and realtive position in css
+
+  4. DYNAMIC routing 
+  eg:<Route path='/user/:id' element={<userdetail/>}/>
+  (useParamas()->returns object)
+  const paramas = useParamas();
+  console.log(paramas);
+  id:<id>value
+
+
+5.nested routing 
+6.useNavigation();
+
+
+useLocation()
+urlSearchParamas();
+
+
+6.local storage (class main done )
+7.session storage
+8.react efficeiecy (React .Memo);
+9,useMemo();
+10.useCallback();
+11.react portals
+12.lazy loading
+13.error boundarires(class base componnet)
+
+14.custom hooks() 
+15.forward ref
+
+16.todo appplication with the layout and conditionaol renderring
+17.firebase 
+19.pagination
+18.TMDB DATA BASE MOVIE (api call)
+i.linear color gradient generator for css
+ii.react icons (need to install)
+
+iii.sorting array 
+
+var arr = [3,4,2,5,3,4.5];
+arr.sort((a,b)=>a-b);//asceding order 
+
+19.after download a repository from git hub we need type in terminal ->>npm i;
+
+20.material ui ->> for inbuilt component$ it is appplicationfff

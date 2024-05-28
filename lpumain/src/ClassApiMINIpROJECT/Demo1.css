@@ -1,0 +1,54 @@
+
+
+.first{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:12px;
+    background-color: antiquewhite;
+
+   
+   
+}
+.second img{
+width:260px;
+height:200px;
+justify-content: center;
+align-items: center;
+transition: all 0.5s;
+
+    
+
+
+
+}
+.second {
+    width:260px;
+    height:360px;
+    background-color:lightseagreen;
+    margin-left:69px;
+    margin-top:100px;
+    justify-content: center;
+    align-items:center;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 23px 23px 23px lightslategray;
+
+
+}
+
+.second:hover{
+    box-shadow: 23px 23px 23px lightslategray;
+    transform: scale(1.2,1.2);
+    transition: all 0.5s;
+}
+
+.second:hover h2{
+    color:blue;
+    transition: all 0.5s;
+    transform: scale(1.2,1.2);
+}
+.second:hover  h1{
+    transition: all 0.5s;
+    color:red;
+}

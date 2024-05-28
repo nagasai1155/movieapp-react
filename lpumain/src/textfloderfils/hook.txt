@@ -1,0 +1,30 @@
+23/1/24
+
+
+1.useReducer();(hook)
+
+ const[state,dispatch] = useReducer(reducer,i.state,);
+
+
+view->dispatch->action->reducer->state->view.
+
+
+
+2.context -api
+
+i.React.createContext()
+ii.provider
+iii.export our context
+4.import our context
+5,consume our context
+
+
+  (useContext() hook for the context that will be used)
+
+   application using context api (theme changer)
+
+
+   3.navlink an₫ link difference 
+
+   navlink access the class
+   but link can't acces the class

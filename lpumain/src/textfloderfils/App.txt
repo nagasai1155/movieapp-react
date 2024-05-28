@@ -1,0 +1,256 @@
+//Props
+import About from "./components/About"
+function App() {
+  var name="Adfar Rasheed";
+  var age=26;
+  var gender="Male";
+  return (
+    <div className="App">
+      <h1>Adfar Rasheed</h1>
+      <About name={name} age={age} gender={gender}/>
+      <About name="lpu" age={1000} gender="female"/>
+      
+    </div>
+  );
+}
+
+export default App;
+
+
+import React from 'react'
+import Blog from './components/Blog'
+
+function App() {
+  return (
+    <div>
+      <Blog name="Adfar" age={34} gender="male"/>
+    </div>
+  )
+}
+
+export default 
+
+
+import React from 'react'
+import Header from './components/Header';
+import Blog from "./components/Blog"
+
+function App() {
+  return (
+    <div>
+      <Header>
+        <h1>Hello Header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quasi quos consectetur assumenda soluta quae blanditiis praesentium enim ut reiciendis?</p>
+        <Blog name="Blog" age="34" gender="male"/>
+      </Header>
+    </div>
+  )
+}
+
+export default App
+
+import React from 'react'
+import Header from './components/Header'
+
+function App() {
+  var data= [[1,2,3],
+[4,5,6],
+[7,8,9]]
+  return (
+    <div>
+      {data.map((item,index)=>
+      item.map((list,index)=><li>{list}</li>)
+      )}
+      <Header data={data}/>
+    </div>
+  )
+}
+
+export default App
+
+//map
+import React from 'react'
+
+function App() {
+  var data=["Adfar","react","HTML","css","react"]
+  return (
+    <div>
+      {data.map((item,index)=>(
+        <div key={index}>
+          <h1>{item}</h1>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default App;
+
+
+Why State
+import React  from 'react'
+export default function App() {
+  var count = 0;
+  const addone =()=>{
+    count=count+1
+  }
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={addone}>Increment</button>
+    </div>
+  )
+}
+
+
+//Counter application
+
+import React,{useState} from 'react'
+
+export default function App() {
+ const [counter,setCounter] = useState(0)
+ const addone =()=>{
+  setCounter(counter+1)
+ }
+  return (
+    <div>
+      <h1>{counter}</h1>
+      {/* <button onClick={addone}>Increment</button>
+      <button onClick={()=>setCounter(counter-1)}>Decrement</button> */}
+      <button onClick={()=>
+        {setCounter((a)=>a+1);
+        setCounter((a)=>(a+1));
+        setCounter((a)=>(a+1))}}>
+          Update</button>
+    </div>
+  )
+}
+
+
+//themechanger
+
+import React, { useState } from 'react'
+import "./App.css"
+import ThemeChanger from './components/ThemeChanger';
+function App() {
+  const [text,setText] = useState("Dark");
+  const [bacgroundColor,setBackgroundColor] = useState("white")
+  const [color,setColor] = useState("black")
+  const handleColor=()=>{
+    if(text === "Dark"){
+      setText("Light");
+      setBackgroundColor("black");
+      setColor("white")
+    } else {
+      setText("Dark");
+      setBackgroundColor("white");
+      setColor("black")
+    }
+  }
+  return (
+    <>
+    <div className='main' style={{backgroundColor:bacgroundColor,color:color}}>
+      <h1>Welcome to the app!</h1>
+      <button onClick={()=>handleColor()}>{text}</button>
+      <div>
+      <ThemeChanger/>
+    </div>
+    </div>
+    
+    </>
+    
+  )
+}
+
+export default App
+
+
+//if else conditional rendering 
+import React from 'react'
+
+export default function App() {
+  var condition = false;
+  if(condition){
+    return (
+      <h1>Hello True</h1>
+    )
+  } else{
+    return(
+      <h1>Heelo False</h1>
+    )
+  }
+}
+
+//condition rendering 
+import React, { useState } from 'react';
+import "./App.css"
+const Comp1 =()=>{
+  return <h1>I am Groot</h1>
+}
+const Comp2=()=>{
+  return (
+    <h1>I am not Groot</h1>
+  )
+}
+const Comp3=()=>{
+  return (
+    <h1>I am component three</h1>
+  )
+}
+export default function App() {
+ 
+  const [condition,setCondition]= useState(true);
+  const handleCondition =()=>{
+    // if(condition === true){
+    //   setCondition(false)
+    // } else {
+    //   setCondition(true)
+    // }
+    setCondition(!condition)
+  }
+    return (
+      <>
+      <div className={condition?"active":"not-active"}>
+      <h1>Hello True</h1>
+      <button onClick={()=>handleCondition()}>{condition?"DisplayNotGrrot":"DisplayGroot"}</button>
+      {condition?<Comp1/>:<Comp2/>}
+      </div>
+       {condition && (
+        <div>
+          <Comp3/>
+          <button onClick={()=>setCondition(false)}>x</button>
+        </div>
+       )}
+      </>
+     
+    )
+  
+}
+
+
+//state scheduling and state batching 
+import React, { useState } from 'react'
+
+function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(0);
+  console.log("LPU");
+  function handleLPu(){
+    console.log("Newton")
+  }
+  const handleCount =()=>{
+    setCount(count+1);
+    
+  }
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={()=>{handleCount()}}>Increment count</button>
+      <button onClick={handleLPu}>Hello</button>
+      <h1>{number}</h1>
+      <button onClick={()=>handleCount()}>Decrement Number</button>
+    </div>
+  )
+}
+
+export default App

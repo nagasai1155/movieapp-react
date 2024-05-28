@@ -1,0 +1,219 @@
+1.//updation of the number with two buttons increment and decrement
+
+
+import React,{useState} from 'react'
+
+
+
+export default function App() {
+ let [counter,updateCounter] = useState(0);
+ 
+console.log(updateCounter);
+console.log(counter);
+ return (
+    <div>
+        <h2>counter value:{counter}</h2>
+        <button onClick={()=>{updateCounter(++counter)}}>increment</button>
+        <button onClick={()=>{updateCounter(--counter)}}>decrement</button>
+    </div>
+
+ )
+}
+
+
+
+import React from "react";
+2. //learning state concept and setstate by class component
+
+ class Naga extends React.Component{
+    state = {
+        productName:"realme",
+        price :20000
+
+    }
+    render(){
+        return(
+            <div>
+                <h1>productName:{this.state.productName}</h1>
+                <h1>price :{this.state.price}</h1>
+               
+                    <input id="naga" type='number' placeholder="enter price"/>
+                    <br/>
+                    <br/>
+                    <input type="text" id="sai" placeholder="enter product"/>
+                    <br/>
+                    <br/>
+                    <button onClick={()=>{
+                        let q = document.getElementById('sai').value;
+                        let p=   document.getElementById('naga').value;
+                                 console.log(q);
+                                 console.log(p);
+                                 this.state.price=p;
+                                 this.state.productName=  q;
+                                 console.log(this.state);
+                                 this.setState({
+                                    price:p,
+                                    productName:q
+                                 })          
+                                           
+                                           
+                                           
+                                           }}>UPDATE</button>
+
+
+               
+            </div>
+        )
+    }
+ }
+ export default Naga;
+
+
+ 3.import React from 'react'
+import { useState } from 'react';
+import './sai.css'
+function Sai() {
+    // let x = "nagasai";
+    // let y = 1232;
+    let  [uname1,updateName]  = useState()
+    let [passw,updatePass] = useState()
+
+
+  return (
+    <>
+        <form className='hello'>         
+            <input  id="first" type='text' placeholder='enter name'/>
+            <br/>
+            <br/>
+
+            <input id='second' type='password' placeholder='password'/>
+            <br/>
+            <br/>
+            <button onClick={()=>{
+                let uname=document.getElementById('first').value;
+                let pass = document.getElementById('second').value;
+               updateName(uname);
+               updatePass(pass)
+            }}>UPDATE</button>
+               <h1>username:{uname1}</h1>
+            <h1>password:{passw}</h1>
+            </form>
+
+    </>
+  )
+}
+export default  Sai; 
+
+
+ 4.// useEffect hook example on live timer and date;
+
+
+import React,{useEffect, useState} from 'react'
+
+function App() {
+
+  let [number,updateNumber] = useState(0) 
+
+  
+   useEffect(()=>{
+    setTimeout(()=>{
+      updateNumber(new Date());
+    },1000)
+   },[number])
+  
+  return (<>
+    
+    <h1>{number.toLocaleString()}</h1>
+    
+    
+    </> )
+}
+
+export default App
+
+
+simple todo 
+
+import React, { useState } from 'react'
+
+function ThreeParent() {
+
+ const [us,setUs] =    useState(['nag','sai'])
+const [input,setInput] = useState('');
+
+
+const addNew=()=>{
+    setUs([...us,input]);
+    setInput('');
+}
+
+const onChanges = (e)=>{
+setInput(e.target.value);
+
+}
+
+const onDelete = (index) => {
+    const updatedList = [...us];
+    updatedList.splice(index, 1);
+    setUs(updatedList);
+  };
+  return (
+   <>
+   <input  value={input} onChange={onChanges}/>
+   <button  onClick={addNew} >addnew</button>
+   
+   {us.map((e)=>{
+    return (
+    <><li>{e}</li>
+
+    <button onClick={()=>{onDelete(0)}}>❌</button>
+    </>)
+   })}
+   
+   </>
+  )
+}
+
+export default ThreeParent
+
+
+
+//new todo own 
+
+import React, { useState } from 'react';
+
+function ThreeParent(){
+
+  const [change,setChange] = useState(['item1','item2'])
+ const [nitem,setNitem]=  useState('')
+  const addNew=()=>{
+    setChange([...change,'item3'])
+    setChange(' enter again');
+  }
+
+ const uDelete= (index)=>{
+  const ulist = [...change];
+  ulist.splice(index,1);
+
+ }
+  return(
+
+    <>
+    
+    <input  value={nitem} onChange={(e)=>{
+      setNitem(e.target.value);
+    }} />
+
+    <button onClick={addNew}>add</button>
+
+    {change.map((i,index)=>{
+     return(
+      <><li>{i}</li>
+      <button onClick={uDelete}>❌</button></>
+     )
+      
+    })}
+    </>
+  )
+}
+export default ThreeParent;
